@@ -5,7 +5,8 @@
 
 using namespace std;
 
-const int SIZE = 5;
+const int SIZE = 3;//sizedy ozimiz qalagan matrisaga auystyruga bolady
+
 
 void mass(int arr[][SIZE], const int size)
 {
@@ -13,7 +14,7 @@ for (int i = 0; i < size; i++)
 {
 for (int j = 0; j < size; j++)
 {
-arr[i][j] = 30 + rand() % 31;
+arr[i][j] =  rand() % 100;
 
  cout << arr[i][j] << " ";
 }
@@ -36,14 +37,10 @@ return min;
 
 int main()
 {
-setlocale(LC_ALL, "rus");
-
  int matrix[SIZE][SIZE] = {};
  mass(matrix, SIZE);
-
  cout << endl;
-
- cout << "MIN = " << min(matrix, SIZE) << endl;
+ cout << "Min = " << min(matrix, SIZE) << endl;
 
 return 0;
 }
