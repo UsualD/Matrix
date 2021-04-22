@@ -1,32 +1,53 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 
-# Precompiled Headers
-*.gch
-*.pch
+using namespace std;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+const int SIZE = 5;
 
-# Fortran module files
-*.mod
-*.smod
+void mass(int arr[][SIZE], const int size)
+{
+for (int i = 0; i < size; i++)
+{
+for (int j = 0; j < size; j++)
+{
+arr[i][j] = 30 + rand() % 31;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+ cout << arr[i][j] << " ";
+}
+cout << endl;
+}
+}
+int min(int arr[][SIZE], const int size)
+{
+int min = arr[0][0];
+for (int i = 0; i < size; i++)
+{
+ for (int j = 0; j < size; j++)
+{
+if (arr[i][j] < min)
+min = arr[i][j];
+}
+}
+return min;
+}
 
-# Executables
-*.exe
-*.out
-*.app
+int main()
+{
+setlocale(LC_ALL, "rus");
+
+ int matrix[SIZE][SIZE] = {};
+ mass(matrix, SIZE);
+
+ cout << endl;
+
+ cout << "MIN = " << min(matrix, SIZE) << endl;
+
+return 0;
+}
+
+
+
+
